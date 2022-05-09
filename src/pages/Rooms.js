@@ -9,7 +9,7 @@ function Rooms({ navigation }) {
     return (
         <View>
             <Text>
-                Rooms
+                Roomsgdasdfsadf
             </Text>
         </View>
     )
