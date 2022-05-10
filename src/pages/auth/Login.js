@@ -10,10 +10,17 @@ import CustomInput from "../../components/CustomInput";
 import CustomButton from '../../components/CustomButton';
 
 
-function Login({navigation}) {
+function Login({ navigation }) {
     const goBack = () => {
         navigation.goBack();
+        
     }
+    const handleLogin = () => {
+        navigation.navigate("Rooms");
+    }
+
+
+
     return (
         <SafeAreaView
             style={styles.container}>
