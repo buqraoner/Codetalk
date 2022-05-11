@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator();
 import Home from "./pages/Home";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
-
+import Rooms from './pages/Rooms';
 
 
 
@@ -44,6 +44,14 @@ const App = () => {
                     component={Login}
                     options={{
                         title: "Login",
+                        headerShown: false
+                    }}
+                />
+                <Stack.Screen
+                    name="Rooms"
+                    component={Rooms}
+                    options={{
+                        title: "Rooms",
                         headerShown: false
                     }}
                 />

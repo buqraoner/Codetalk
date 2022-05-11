@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "356724552413",
+    "project_id": "codetalkshomework",
+    "storage_bucket": "codetalkshomework.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356724552413:android:946dcbcccca2556ba06134",
+        "android_client_info": {
+          "package_name": "com.codetalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356724552413-lki085n6g7qf3hp4eg1ba9b2h7604pqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqL2bTdniYnfkeJfHrySD66i1jEUlMhJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356724552413-lki085n6g7qf3hp4eg1ba9b2h7604pqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
