@@ -3,7 +3,6 @@ import { Text, View, SafeAreaView } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import AuthErrorMessageParse from '../../utils/authErrorMessageParse';
 
-
 // style
 import styles from '../Generic.style';
 
@@ -11,31 +10,27 @@ import styles from '../Generic.style';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
 
-
 function Register({ navigation }) {
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-
-
     const goBack = () => {
         navigation.goBack();
-    }
+    };
 
     const register = () => {
-        auth().createUserWithEmailAndPassword(email, password)
+        auth()
+            .createUserWithEmailAndPassword(email, password)
             .then(() => {
                 navigation.navigate('Rooms');
-            }
-            )
+            })
             .catch(errorCode => {
                 console.log(errorCode);
-                alert(AuthErrorMessageParse(errorCode));
-            }
-            )
-    }
+                const errorMessage = AuthErrorMessageParse(errorCode);
+                alert(errorMessage);
+            });
+    };
 
     const checkPassword = () => {
         if (password === confirmPassword) {
@@ -43,15 +38,12 @@ function Register({ navigation }) {
         } else {
             alert('Şifreler uyuşmuyor.');
             return false;
-
-
         }
-    }
+    };
 
     const GoRoomPage = () => {
         navigation.navigate('Rooms');
-    }
-
+    };
 
     const RegisterSubmit = () => {
         if (checkPassword()) {
@@ -59,17 +51,12 @@ function Register({ navigation }) {
                 GoRoomPage();
             }
         }
-    }
-
-
+    };
 
     return (
         <SafeAreaView style={styles.container}>
             <View>
-                <Text
-                    style={styles.header}>
-                    Code Talks
-                </Text>
+                <Text style={styles.header}>Code Talks</Text>
                 <CustomInput
                     placeholder="E posta adresinizi giriniz.."
                     value={email}
@@ -86,7 +73,6 @@ function Register({ navigation }) {
                     value={password}
                     setValue={setPassword}
                     returnKeyType="next"
-
                 />
                 <CustomInput
                     placeholder="Şifrenizi yeniden giriniz.."
@@ -101,17 +87,10 @@ function Register({ navigation }) {
                     theme="primary"
                     onPress={RegisterSubmit}
                 />
-                <CustomButton
-                    text="Geri"
-                    theme='secondary'
-                    onPress={goBack}
-                />
+                <CustomButton text="Geri" theme="secondary" onPress={goBack} />
             </View>
-
         </SafeAreaView>
-
-    )
+    );
 }
-
 
 export default Register;
